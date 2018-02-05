@@ -19,7 +19,7 @@ public class ProductDaoImpl implements ProductDao {
 
         @Override
         public Product save(Product product) {
-                this.sessionFactory.getCurrentSession().saveOrUpdate(product);
+                this.sessionFactory.getCurrentSession().merge(product);
                 return product;
         }
 
@@ -38,5 +38,10 @@ public class ProductDaoImpl implements ProductDao {
         @Override
         public List<Product> findAll() {
                 return this.sessionFactory.getCurrentSession().createQuery("from Product").list();
+        }
+
+        @Override
+        public List<Product> findCrystals() {
+                return this.sessionFactory.getCurrentSession().createQuery("from KaiburrCrystal").list();
         }
 }

@@ -30,12 +30,6 @@ public class AssessmentApplication {
         @Autowired
         private ProductService productService;
         
-        @Autowired
-        private ForceUserService forceUserService;
-        
-        @Autowired
-        private OrderService orderService;
-        
         private static String[] args;
 
         /**
@@ -58,21 +52,6 @@ public class AssessmentApplication {
         
         @EventListener(ApplicationReadyEvent.class)
         public void init() {
-                Order order = new Order();
-                order.setDate(new Date());
-                ForceUser user = this.forceUserService.find(1); //new ForceUser();
-                order.setForceUser(user);
-                List<OrderLine> orderLines = new ArrayList();
-                OrderLine orderLine = new OrderLine();
-                orderLine.setOrder(order);
-                Product product = this.productService.find(4);
-                orderLine.setProduct(product);
-                orderLine.setQuantity(1);
-                orderLine.setUnitPrice(product.getPrice());
-                orderLines.add(orderLine);
-                order.setOrderLines(orderLines);
-                this.orderService.save(order);
-                
                 String sabersXmlPath = "";
                 ForceUser forceUser = null;
                 

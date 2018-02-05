@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public class Order implements Serializable {
         @ManyToOne(cascade = CascadeType.ALL)
         private ForceUser forceUser;
         
-        @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
+        @OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.EAGER)
         private List<OrderLine> orderLines;
 
         public Order() {

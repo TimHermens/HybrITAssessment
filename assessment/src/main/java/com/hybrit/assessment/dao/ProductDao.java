@@ -12,4 +12,5 @@ public interface ProductDao {
         Product find(int id);
         Product find(String name);
         List<Product> findAll();
+        List<Product> findCrystals();
 }

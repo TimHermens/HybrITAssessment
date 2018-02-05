@@ -26,7 +26,8 @@ public class InventoryDaoImpl implements InventoryDao {
 
         @Override
         public ProductInventory save(ProductInventory productInventory) {
-                this.sessionFactory.getCurrentSession().saveOrUpdate(productInventory);
+                System.out.println("updating");
+                this.sessionFactory.getCurrentSession().merge(productInventory);
                 return productInventory;
         }
 

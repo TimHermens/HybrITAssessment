@@ -24,8 +24,9 @@ public class OrderDaoImpl implements OrderDao {
 
         @Override
         public List<Order> findAll() {
-                return (List<Order>) this.sessionFactory.getCurrentSession()
-                        .createQuery("from order").list();
+                List<Order> orders = (List<Order>) this.sessionFactory.getCurrentSession()
+                        .createQuery("from Order").list();
+                return orders;
         }
         
 }

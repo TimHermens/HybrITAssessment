@@ -1,0 +1,57 @@
+<div class="text-center">
+    <h2>Add new product</h2>
+</div>
+<div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+                <form ng-submit="ctrl.submit()" name="productForm" class="form-horizontal">
+                        
+                        <div class="row">
+                                <div class="form-group col-md-12">
+                                        <label class="col-md-2 control-label label-title" for="uproductName">NAME</label>
+                                        <div class="col-md-7">
+                                                <input type="text" ng-model="ctrl.product.product.name" id="uproductName" class="form-control input-sm" placeholder="Enter product name" required />
+                                        </div>
+                                </div>
+                        </div>
+                        
+                        <div class="row">
+                                <div class="form-group col-md-12">
+                                        <label class="col-md-2 control-label label-title" for="uproductPrice">PRICE</label>
+                                        <div class="col-md-7">
+                                                <input type="number" ng-model="ctrl.product.product.price" id="uproductPrice" class="form-control input-sm" placeholder="Enter product price" required ng-pattern="ctrl.onlyNumbers" />
+                                        </div>
+                                </div>
+                        </div>
+                        
+                        <div class="row">
+                                <div class="form-group col-md-12">
+                                        <label class="col-md-2 control-label label-title" for="ucrystal">CRYSTAL</label>
+                                        <div class="col-md-7">
+                                                <select id="ucrystal" class="form-control" placeholder="Select crystal name" ng-model="ctrl.crystalIndex" required>
+                                                        <option ng-repeat="crystal in ctrl.crystals" value="{{$index}}">{{crystal.name}}</option>
+                                                </select>
+                                        </div>
+                                </div>
+                        </div>
+                        
+                        <div class="row">
+                                <div class="form-group col-md-12">
+                                        <label class="col-md-2 control-label label-title" for="uproductPrice">IN STOCK</label>
+                                        <div class="col-md-7">
+                                                <input type="number" ng-model="ctrl.product.stock" id="uproductPrice" class="form-control input-sm" placeholder="Enter stock quantity" required ng-pattern="ctrl.onlyIntegers" />
+                                        </div>
+                                </div>
+                        </div>
+                        
+                        <div class="row">
+                                <div class="form-group col-md-12">
+                                        <div class="col-md-offset-1">
+                                        <input type="submit" value="Create product" class="btn btn-primary" ng-disabled="productForm.$invalid || productForm.$pristine"/>
+                                        </div>
+                                </div>
+                        </div>
+                </form>
+        </div>
+        <div class="col-md-2"></div>
+</div>

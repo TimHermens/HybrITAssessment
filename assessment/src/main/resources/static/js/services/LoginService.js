@@ -1,12 +1,17 @@
 angular.module('myApp').factory('LoginService',
-    ['$http', '$q', 'urls',
-        function ($http, $q, urls) {
+    ['$http', '$q', 'urls','$localStorage',
+        function ($http, $q, urls, $localStorage) {
 
             var factory = {
-                login: login
+                login: login,
+                getUser: getUser
             };
 
             return factory;
+
+            function getUser() {
+                    return $localStorage.user;
+            }
 
             function login(id) {
                 console.log('Fetching ForceUser with id :'+id);
@@ -15,6 +20,7 @@ angular.module('myApp').factory('LoginService',
                     .then(
                         function (response) {
                             console.log('Fetched successfully User with id :'+id);
+                            $localStorage.user = response.data;
                             deferred.resolve(response.data);
                         },
                         function (errResponse) {

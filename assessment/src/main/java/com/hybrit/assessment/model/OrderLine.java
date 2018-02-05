@@ -1,5 +1,6 @@
 package com.hybrit.assessment.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -34,7 +35,8 @@ public class OrderLine implements Serializable {
         @ManyToOne(cascade = CascadeType.ALL)
         private Product product;
         
-        @ManyToOne(cascade = CascadeType.ALL)
+        @ManyToOne
+        @JsonIgnore
         private Order order;
 
         public OrderLine() {
@@ -62,6 +64,7 @@ public class OrderLine implements Serializable {
                 return product;
         }
 
+        @JsonIgnore
         public Order getOrder() {
                 return order;
         }

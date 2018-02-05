@@ -30,3 +30,17 @@ h2 {
 .margin-top {
     margin-top: 20px;
 }
+
+.valign-center {
+        display: table-cell;
+        vertical-align: middle;
+}
+
+td {
+        vertical-align: middle;
+}
+
+.label-title {
+        font-size: 18px;
+        font-weight: 300;
+}

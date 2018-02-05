@@ -1,5 +1,6 @@
 package com.hybrit.assessment.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -33,6 +34,7 @@ public class Product implements Serializable {
         private BigDecimal price = new BigDecimal(0);
         
         @OneToOne(cascade = CascadeType.ALL, mappedBy = "product")
+        @JsonIgnore
         private ProductInventory productInventory;
 
         public Product(String name, BigDecimal price) {
@@ -65,6 +67,15 @@ public class Product implements Serializable {
 
         public void setPrice(BigDecimal price) {
                 this.price = price;
+        }
+
+        @JsonIgnore
+        public ProductInventory getProductInventory() {
+                return productInventory;
+        }
+
+        public void setProductInventory(ProductInventory productInventory) {
+                this.productInventory = productInventory;
         }
         
         

@@ -25,7 +25,7 @@ public class ProductInventory implements Serializable {
         @Column(name = "quantity")
         private int quantity;
         
-        @OneToOne(cascade = CascadeType.ALL)
+        @OneToOne
         private Product product;
 
         public ProductInventory() {

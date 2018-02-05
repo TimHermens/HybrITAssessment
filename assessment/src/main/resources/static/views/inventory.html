@@ -1,0 +1,37 @@
+<div class="text-center">
+    <h2>Inventory</h2>
+</div>
+<div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+                <div class="table-responsive">
+                <table class="table table-hover">
+                <thead>
+                        <tr>
+                                <th>PRODUCT NAME</th>
+                                <th>CRYSTAL</th>
+                                <th>IN STOCK</th>
+                                <th>PRICE</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr ng-repeat="p in ctrl.inventory">
+                                <td class="valign-center">
+                                        {{p.product.name}}
+                                </td>
+                                <td class="valign-center">
+                                        {{p.product.kaiburrCrystal.name}}
+                                </td>
+                                <td class="valign-center">
+                                        {{p.quantity}}
+                                </td>
+                                <td class="valign-center">
+                                        {{p.product.price}} Cr.
+                                </td>
+                        </tr>
+                </tbody>
+        </table>
+</div>
+        </div>
+        <div class="col-md-2"></div>
+</div>
