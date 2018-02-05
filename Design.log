@@ -1,0 +1,426 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.14)  30 JAN 2018 13:18
+entering extended mode
+**./Design.tex
+(Design.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+("E:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("E:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("E:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("E:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("E:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("E:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyheadings.sty"
+Package: fancyheadings 2017/06/30 v3.9a Legacy package to call fancyhdr
+
+
+Package fancyheadings Warning: Please stop using fancyheadings!
+(fancyheadings)                Use fancyhdr instead.
+(fancyheadings)                We will call fancyhdr with the very same
+(fancyheadings)                options you passed to fancyheadings.
+(fancyheadings)                
+(fancyheadings)                fancyhdr is 99 percent compatible with
+(fancyheadings)                fancyheadings. The only incompatibility is
+(fancyheadings)                that \headrulewidth and \footrulewidth and
+(fancyheadings)                their \plain... versions are no longer length
+(fancyheadings)                parameters, but normal macros (to be changed
+(fancyheadings)                with \renewcommand rather than \setlength)..
+
+("E:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip43
+\f@nch@O@elh=\skip44
+\f@nch@O@erh=\skip45
+\f@nch@O@olh=\skip46
+\f@nch@O@orh=\skip47
+\f@nch@O@elf=\skip48
+\f@nch@O@erf=\skip49
+\f@nch@O@olf=\skip50
+\f@nch@O@orf=\skip51
+))
+("E:\Program Files\MiKTeX 2.9\tex\latex\changepage\changepage.sty"
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count88
+\cp@tempcnt=\count89
+)
+("E:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("E:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("E:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+("E:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("E:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(Design.aux)
+\openout1 = `Design.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+ ("E:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count90
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count91
+\nofMParguments=\count92
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count93
+\MPscratchDim=\dimen106
+\MPnumerator=\count94
+\makeMPintoPDFobject=\count95
+\everyMPtoPDFconversion=\toks16
+) ("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("E:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("E:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("E:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("E:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 28.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 33.
+
+("E:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
+
+Underfull \hbox (badness 6927) in paragraph at lines 51--51
+[]\OT1/cmr/bx/n/10 Crystal har-vest
+ []
+
+
+Overfull \hbox (6.20668pt too wide) in paragraph at lines 28--95
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--107
+[]\OT1/cmr/bx/n/10 Application
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 109--109
+[]\OT1/cmr/bx/n/10 Load new light
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
+[]\OT1/cmr/bx/n/10 Query light
+ []
+
+
+Overfull \hbox (6.20668pt too wide) in paragraph at lines 104--117
+ [][] 
+ []
+
+
+Overfull \hbox (6.20668pt too wide) in paragraph at lines 126--137
+ [][] 
+ []
+
+
+Underfull \hbox (badness 1910) in paragraph at lines 146--146
+[]\OT1/cmr/bx/n/10 Check ref-er-ence
+ []
+
+
+Overfull \hbox (6.20668pt too wide) in paragraph at lines 143--149
+ [][] 
+ []
+
+
+Overfull \hbox (6.20668pt too wide) in paragraph at lines 158--177
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
+[]\OT1/cmr/bx/n/10 Display ref-er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
+[]\OT1/cmr/bx/n/10 Set ref-er-ence
+ []
+
+
+Overfull \hbox (6.20668pt too wide) in paragraph at lines 183--210
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `figure:1' on page 1 undefined on input line 223.
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+] [2] [3] [4]
+
+LaTeX Warning: Reference `figure:1' on page 5 undefined on input line 232.
+
+
+LaTeX Warning: Reference `figure:2' on page 5 undefined on input line 256.
+
+[5]
+
+LaTeX Warning: Reference `figure:3' on page 6 undefined on input line 280.
+
+[6]
+
+LaTeX Warning: Reference `figure:4' on page 7 undefined on input line 302.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
+[]\OT1/cmr/m/n/10 Abstract
+ []
+
+
+Overfull \hbox (18.20667pt too wide) in paragraph at lines 327--342
+ [][] 
+ []
+
+[7]
+Overfull \hbox (3.94499pt too wide) in paragraph at lines 354--355
+\OT1/cmr/m/n/10 the Bib-TexWriter, DatabaseWriter, End-NoteWriter and XML-Write
+r classes
+ []
+
+
+Overfull \hbox (1.66719pt too wide) in paragraph at lines 362--363
+[]\OT1/cmr/m/n/10 The Bib-Tex-Ac-ces-sor-Fac-tory, DatabaseAc-ces-sor-Fac-tory,
+ End-NoteAc-ces-sor-
+ []
+
+
+Overfull \hbox (3.94499pt too wide) in paragraph at lines 364--365
+\OT1/cmr/m/n/10 the Bib-TexWriter, DatabaseWriter, End-NoteWriter and XML-Write
+r classes
+ []
+
+[8]
+Overfull \hbox (16.00061pt too wide) in paragraph at lines 387--388
+\OT1/cmr/m/n/10 Pro-ceed-ingsRe-quired-Field-sStrat-egy and The-sis-Re-quired-F
+ield-sStrat-egy classes
+ []
+
+[9]
+Overfull \hbox (2.63951pt too wide) in paragraph at lines 395--396
+\OT1/cmr/m/n/10 trat-e-gy-Fac-tory, Pro-ceed-ingsRef-er-ence-Type-S-trat-e-gy-F
+ac-tory and The-sis-Ref-
+ []
+
+
+Overfull \hbox (12.80609pt too wide) in paragraph at lines 395--396
+\OT1/cmr/m/n/10 er-ence-Type-S-trat-e-gy-Fac-tory classes cor-re-spond to the C
+on-crete-Fac-tory classes
+ []
+
+
+Overfull \hbox (4.19507pt too wide) in paragraph at lines 396--397
+[]\OT1/cmr/m/n/10 The Re-quired-Field-sStrat-egy and Or-der-Field-sStrat-egy in
+-ter-faces cor-re-spond
+ []
+
+
+Overfull \hbox (3.55618pt too wide) in paragraph at lines 397--398
+\OT1/cmr/m/n/10 Pro-ceed-ingsRe-quired-Field-sStrat-egy, The-sis-Re-quired-Fiel
+d-sStrat-egy and the
+ []
+
+
+Overfull \hbox (2.88963pt too wide) in paragraph at lines 397--398
+\OT1/cmr/m/n/10 BookO-rder-Field-sStrat-egy, Jour-nalAr-ti-cle-Order-Field-sStr
+at-egy, Pro-ceed-ing-
+ []
+
+
+Overfull \hbox (1.22281pt too wide) in paragraph at lines 397--398
+\OT1/cmr/m/n/10 sOr-der-Field-sStrat-egy, The-sisOr-der-Field-sStrat-egy classe
+s cor-re-spond to the
+ []
+
+
+Overfull \hbox (39.80621pt too wide) in paragraph at lines 410--411
+[]\OT1/cmr/m/n/10 The APARef-er-enceS-tyleStrat-egy, Tura-bi-an-Ref-er-enceS-ty
+leStrat-egy and ChicagoRef-
+ []
+
+
+Overfull \hbox (39.80621pt too wide) in paragraph at lines 418--419
+[]\OT1/cmr/m/n/10 The APARef-er-enceS-tyleStrat-egy, Tura-bi-an-Ref-er-enceS-ty
+leStrat-egy and ChicagoRef-
+ []
+
+[10]
+Overfull \hbox (11.94514pt too wide) in paragraph at lines 420--421
+[]\OT1/cmr/m/n/10 The Reg-u-larStyleStrat-egy, Bold-StyleStrat-egy and Ital-ic-
+sStyleStrat-egy classes
+ []
+
+
+Overfull \hbox (39.80621pt too wide) in paragraph at lines 426--427
+[]\OT1/cmr/m/n/10 The APARef-er-enceS-tyleStrat-egy, Tura-bi-an-Ref-er-enceS-ty
+leStrat-egy and ChicagoRef-
+ []
+
+
+Overfull \hbox (0.6951pt too wide) in paragraph at lines 428--429
+[]\OT1/cmr/m/n/10 The Ital-ic-sStyle-Fac-tory, Bold-Style-Fac-tory and Reg-u-la
+rStyle-Fac-tory classes
+ []
+
+
+Overfull \hbox (11.94514pt too wide) in paragraph at lines 430--431
+[]\OT1/cmr/m/n/10 The Reg-u-larStyleStrat-egy, Bold-StyleStrat-egy and Ital-ic-
+sStyleStrat-egy classes
+ []
+
+
+Overfull \hbox (32.30618pt too wide) in paragraph at lines 438--439
+[]\OT1/cmr/m/n/10 The APARef-er-enceS-tyle-Fac-tory, Tura-bi-an-Ref-er-enceS-ty
+le-Fac-tory and ChicagoRef-
+ []
+
+
+Overfull \hbox (39.80621pt too wide) in paragraph at lines 440--441
+[]\OT1/cmr/m/n/10 The APARef-er-enceS-tyleStrat-egy, Tura-bi-an-Ref-er-enceS-ty
+leStrat-egy and ChicagoRef-
+ []
+
+
+Overfull \hbox (1.25049pt too wide) in paragraph at lines 440--441
+\OT1/cmr/m/n/10 er-enceS-tyleStrat-egy classes cor-re-spond to the Prod-uct cla
+sses of the generic
+ []
+
+[11] [12] [13] [14] [15] (Design.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2159 strings out of 493323
+ 29004 string characters out of 3139072
+ 116643 words of memory out of 3000000
+ 5695 multiletter control sequences out of 15000+200000
+ 6222 words of font info for 22 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,11n,45p,716b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
+<E:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><E:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb>
+Output written on Design.pdf (15 pages, 137965 bytes).
+PDF statistics:
+ 79 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

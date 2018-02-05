@@ -1,0 +1,525 @@
+\documentclass[a4paper]{article}
+
+\usepackage{xcolor}
+\usepackage{fancyheadings}
+\usepackage{changepage}
+\usepackage{graphicx}
+
+\newenvironment{indented-1}{\begin{adjustwidth}{1cm}{}}{\end{adjustwidth}}
+
+\newcommand{\todo}[1]{\textcolor{red}{[#1]}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\lhead{HybrIT}
+\rhead{Code Creator Assessment}
+
+\begin{document}
+\pagestyle{fancy}
+
+\section{Problem analysis}
+
+\subsection{Concepts}
+Table \ref{table:1} shows an overview of all the concepts we identified in the problem domain.
+
+\begin{table}
+	\centering
+	\caption{An overview of all the concepts in the problem domain.}
+	\label{table:1}
+	\begin{tabular}{|p{3cm}|p{8.5cm}|} \hline
+		\textbf{Concept} & \textbf{Description} \\ \hline
+		
+		\textbf{Kaiburr crystal} & A Kaiburr crystal powers a light saber. It has the following properties:
+		
+			\tabitem Color: The crystal's color.
+			
+			\tabitem Name: The crystal's name.
+			
+			\tabitem Power usage: The crystal's power usage.
+			
+			\tabitem Harvested from: The planet where the crystal was harvested.
+			
+			\tabitem Price: The crystal's price. \\ \hline
+		
+		\textbf{Force user} & A force user can use the Force. A force user has the following properties:
+		
+			\tabitem Force: The amount of force the force user has.
+			
+			\tabitem Age: The force user's age.
+			
+			\tabitem Title: The force user's title.\\ \hline
+		
+		\textbf{Crystal harvest job} & A crystal harvest job has the following properties:
+		
+			\tabitem Planet: The planet where a crystal can be harvested.
+			
+			\tabitem Harvest price: The price for harvesting a crystal.\\ \hline
+		
+		\textbf{Product} & A product has the following properties:
+		
+			\tabitem ID: An unique identification number that identifies the product.
+			
+			\tabitem Name: The product's name.\\ \hline
+		
+		\textbf{Light saber} & A light saber is a Product and thus shares the same properties as the Product concept. A light saber has the following properties:	
+			
+			\tabitem ID: An unique identification number that identifies the light saber.
+			
+			\tabitem Name: The light saber's name.
+			
+			\tabitem Kaiburr crystal: The Kaiburr crystal that powers the light saber.\\ \hline
+		
+		\textbf{Store inventory} & The store inventory has the following properties: 
+		
+			\tabitem Product: The product that is in stock.
+			
+			\tabitem Stock: The quantity of this product that are in stock. \\ \hline
+			
+		\textbf{Order} & An order has the following properties:
+		
+			\tabitem ID: An unique identification number that identifies the order.
+		
+			\tabitem Date: The date and time of when the order was placed.
+			
+			\tabitem Force user: The force user that placed the order.\\ \hline
+		
+		\textbf{Order line} & An order line has the following properties:
+		
+			\tabitem Order: The order this order line belongs with.
+			
+			\tabitem Product: The product that is ordered.
+			
+			\tabitem Quantity: The quantity of products that is ordered.
+			
+			\tabitem Unit price: The price of one unit of the product at the time the product was ordered.\\ \hline		
+	\end{tabular}
+\end{table}
+
+\subsection{Actions}
+Table \ref{table:2} shows an overview of all the actions we identified in the problem domain. 
+
+\begin{table}
+	\centering
+	\caption{An overview of all the actions in the problem domain.}
+	\label{table:2}
+	\begin{tabular}{|p{3cm}|p{8.5cm}|} \hline
+		\textbf{Action} & \textbf{Description} \\ \hline
+		
+		\textbf{Application start-up} & When the application starts, it reads three parameters that were provided by the user: (1) a path to an XML file containing a list of sabers, (2) the age of the force user, (3) the name or id of a saber. The application prints the following information: (1) the force user's force, (2) the force that is used by the light saber's crystal, (3) the name of the light saber's crystal, (4) the price of the light saber's crystal.\\ \hline
+		
+		\textbf{Load new light sabers} & A Jedi master can load new light sabers in the web shop.\\ \hline
+		
+		\textbf{Query light sabers} & A Jedi master can query the light sabers and stock.\\ \hline
+		
+		\textbf{Order light saber} & A Padawan can order a saber.\\ \hline
+		
+		\textbf{Archive orders} & The application archives all the orders for the Jedi master.\\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Rules}
+Table \ref{table:3} shows an overview of all the rules we found in the problem domain that are applicable to the concepts discussed in Table \ref{table:1}. Table \ref{table:4} shows an overview of all the rules we found in the problem domain that are applicable to the actions discussed in Table \ref{table:2}. 
+
+\begin{table}
+	\centering
+	\caption{An overview of all the rules in the problem domain that are applicable to the concepts discussed in Table \ref{table:1}.}
+	\label{table:3}
+	\begin{tabular}{|p{3cm}|p{8.5cm}|} \hline
+		\textbf{Concept name} & \textbf{Applicable rules} \\ \hline
+		
+		\textbf{Kaiburr crystal} & 
+			\tabitem The crystal's price is equal to $ Cr * F $, where $ Cr $ is the price for harvesting the crystal, and $ F $ is the crystal's power usage. \\ \hline
+		
+		\textbf{Force user} &
+			\tabitem The force user's title is selected depending on the force user's force value. The title Padawan is selected when the force value is less than 93,2. The title Jedi master is selected when the force value is equal to or greater than 93,2. 
+			
+			\tabitem The force user's force is equal to $ A * 10 $, where A is the force user's age. After the age of 18, the force is unlimited.\\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{An overview of all the rules in the problem domain that are applicable to the actions discussed in Table \ref{table:2}.}
+	\label{table:4}
+	\begin{tabular}{|p{3cm}|p{8.5cm}|} \hline
+		\textbf{Action name} & \textbf{Applicable rules} \\ \hline
+		
+		\textbf{Check reference for completeness} & 
+			\tabitem The \textit{Reference type} determines which \textit{Fields} are required for a complete reference. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Responsibilities}
+Table \ref{table:5} shows an overview of all the responsibilities of the concepts we discussed in Table \ref{table:1}. Table \ref{table:6} shows an overview of all the responsibilities of the actions we discussed in Table \ref{table:2}.
+
+\begin{table}
+	\centering
+	\caption{An overview of all the responsibilities of the concepts discussed in Table \ref{table:1}.}
+	\label{table:5}
+	\begin{tabular}{|p{3cm}|p{8.5cm}|} \hline
+		\textbf{Name} & \textbf{Responsibilities} \\ \hline
+		
+		\textbf{Reference} & 
+			\tabitem A \textit{Reference} can provide its data.
+			
+			\tabitem A \textit{Reference} can provide the essential \textit{Fields} in the correct order for displaying the reference.\\ \hline
+		
+		\textbf{Fields} & 
+			\tabitem A \textit{Field} can provide its data. \\ \hline
+		
+		\textbf{Reference type} & 
+			\tabitem A \textit{Reference type} can correctly order the \textit{Fields}. 
+			
+			\tabitem A \textit{Reference type} can determine if all essential \textit{Fields} in a \textit{Reference} are present and have a value. \\ \hline
+		
+		\textbf{Reference style} &
+			\tabitem A \textit{Reference style} can apply the correct style on the value of a \textit{Field}. \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{An overview of all the responsibilities of the actions discussed in Table \ref{table:2}.}
+	\label{table:6}
+	\begin{tabular}{|p{3cm}|p{8.5cm}|} \hline
+		\textbf{Name} & \textbf{Responsibilities} \\ \hline
+		
+		\textbf{Read references} & 
+			\tabitem Uses the correct \textit{Storage format} to read the \textit{References}. 
+			
+			\tabitem Provides all the read \textit{References} of which the \textit{Reference type} is known.\\ \hline
+		
+		\textbf{Save references} & 
+			\tabitem Retrieves the data from the \textit{References} and uses the \textit{Storage format} to save the \textit{References}. \\ \hline
+		
+		\textbf{Display references} &
+			\tabitem Checks if the \textit{References} are complete. 
+			
+			\tabitem Retrieves the \textit{Fields} and \textit{Reference type} from the \textit{References} and displays this data in the correct order according to the \textit{Reference type} and correct style according to the \textit{Reference style}. \\ \hline
+		
+		\textbf{Check references for completeness} &
+			\tabitem Retrieves the \textit{Fields} and \textit{Reference type} from every \textit{Reference} and checks if the \textit{Fields} are complete according to the \textit{Reference type}. 
+			
+			\tabitem Provides whether or not the \textit{References} are complete.\\ \hline
+		
+		\textbf{Add free field to reference} & 
+			\tabitem Checks if the name of the \textit{Free field} is different from the names of the other \textit{Fields} in the \textit{Reference}. If so, the \textit{Free field} is added to the \textit{Reference}. \\ \hline
+		
+		\textbf{Set reference style} & 
+			\tabitem Sets a new \textit{Reference style}. \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsection{Constraints}
+The application has the following constraint:
+
+\begin{itemize}
+	\item The application does not support a user-interface.
+\end{itemize}
+
+\section{Design} \label{section:design}
+In this section, we discuss the whole class diagram by dividing it in four parts.
+
+\subsection{The MVC part} \label{mvcsection}
+Figure \ref{figure:1} shows the class diagram of the Model-View-Controller (MVC) part. We chose this pattern despite the fact it is mostly used when dealing with user-interfaces and the application having the constraint it currently does not support a user-interface. The reason why we chose it anyway is four-fold: 
+
+\begin{itemize}
+	\item One of the responsibilities of the application is to display the references in the right style. A simple way to do this is to use a small preview window to display the references in. This is something that would be done by the View.
+	\item A user-interface may be necessary to support future feature requests.
+	\item MVC provides a clear separation between the presentation logic (View), business logic (Model) and control flow logic (Controller).
+	\item The Model, View and Controller objects have distinct responsibilities and can be changed independent of each other. So when a user-interface is needed, only the existing View needs to be changed (unless more functionality is added with this new View meaning at least the Controller needs to be changed as well).
+\end{itemize}
+
+In the class diagram in Figure \ref{figure:1}, the Model, Controller and View interfaces are solely used to indicate which classes behave like Models, Controllers and Views. The MVC-related abstract classes contain methods to support most of the actions we discussed in Table \ref{table:2}. They are responsible for:
+
+\begin{itemize}
+	\item Reading references from a source.
+	\item Saving references in a specific \textit{Storage format}.
+	\item Displaying references in an appropriate \textit{Reference style}.
+	\item Setting a (new) \textit{Reference style}.
+	\item Adding \textit{Free fields} to references.
+\end{itemize}
+
+The methods in the MainController class request the MainModel class to execute the required actions. The MainModel uses other classes to execute the required actions (see the upcoming sections). The only action the MainModel does self is setting the \textit{Reference style}. In the case of displaying the references, the MainModel class returns the resulting references string representation to the MainController class and the MainController class passes this to the MainView class which will display it in a window. The MainView class is thus responsible for displaying the \textit{References}. 
+
+The MVCFactory abstract class is responsible for creating the related Model, Controller and View objects. When the Controller object is created, it uses the MVCFactory class to create the related Model and View objects.
+
+The ReferenceStyle enumeration is used by the MainModel and MainController classes to set a new \textit{Reference style} or to display the references in the style indicated by the value of the ReferenceStyle. The reasons why we use an enumeration is because it restricts the possible values to indicate the different \textit{Reference styles} to the ones defined in the enumeration and it can be used in switch statements.
+
+%\begin{figure}
+%	\centering
+%	\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{"Part 1".png}}
+%	\caption{Class diagram of the MVC part.}
+%	\label{figure:1}
+%\end{figure}
+
+\subsection{The \textit{References} and \textit{Reference type} part} \label{section:references}
+Figure \ref{figure:2} shows the class diagram of the \textit{Reference} and \textit{Reference type} part. The abstract classes and interfaces have the following responsibilities: 
+
+\begin{itemize}
+	\item The IField interface is responsible for providing the data of the \textit{Field}.
+	\item The IReference interface is responsible for providing the data of the \textit{Reference}, adding a \textit{Free field} to the \textit{Reference}, checking if the the \textit{Reference} has all the required \textit{Fields} with a value according to the RequiredFieldsStrategy interface, and ordering the \textit{Fields} according to the OrderFieldsStrategy interface.
+	\item The RequiredFieldsStrategy interface is responsible for checking if a \textit{Reference} is complete by looking if it contains all the essential \textit{Fields} according to the \textit{Reference type}.
+	\item The OrderFieldsStrategy interface is responsible for ordering the \textit{Fields} in a particular way according to the \textit{Reference type}.
+	\item The ReferenceTypeStrategyFactory abstract class is responsible for creating the appropriate RequiredFieldsStrategy and OrderFieldsStrategy classes for the given \textit{Reference type}.
+\end{itemize}
+
+The Field and Reference objects are created when the references are read from a source (see Section \ref{section:readwrite}). The ReferenceTypeStrategyFactory abstract class is used by the MainModel class to create the appropriate RequiredFieldsStrategy object and OrderFieldsStrategy object for the Reference object depending on its \textit{Reference type}. These objects are used when the MainModel class wants to display the references.
+
+One difference in this class diagram and the responsibilities discussed in Table \ref{table:5} is that the Reference class as opposed to a ReferenceType class is responsible for (a) checking if the the \textit{Reference} has all the required \textit{Fields} with a value and (b) ordering the \textit{Fields}. We chose this design because it makes more sense to let the Reference class work directly on its own Field objects as opposed to a different ReferenceType class that needs to get access to these Field objects. This would make the design needlessly more complex.
+
+The ReferenceType enumeration is contained in the Reference class to indicate the \textit{Reference type} of the \textit{Reference}. It is also used by the ReferenceTypeStrategyFactory abstract class to create the appropriate RequiredFieldsStrategy and OrderFieldsStrategy classes according to the value of the ReferenceType. The reasons why we use an enumeration is because it restricts the possible values to indicate the different \textit{Reference types} to the ones defined in the enumeration and it can be used in switch statements.
+
+%\begin{figure}
+%	\centering
+%	\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{"Part 2".png}}
+%	\caption{Class diagram of the \textit{Reference} and \textit{Reference type} part.}
+%	\label{figure:2}
+%\end{figure}
+
+\subsection{The \textit{Reference style} part}
+Figure \ref{figure:3} shows the class diagram of the \textit{Reference style} part. The abstract classes and interfaces have the following responsibilities:
+
+\begin{itemize}
+	\item The IField interface is responsible for providing the data of the \textit{Field} (see Section \ref{section:references}).
+	\item The ReferenceStyleStrategy interface is responsible for applying the appropriate style on the value of the \textit{Field} class depending on the name of the \textit{Field} class.
+	\item The ReferenceStyleFactory abstract class is responsible for creating the appropriate ReferenceStyleStrategy strategy for the given \textit{Reference style}.
+	\item The StyleStrategy interface is responsible for applying the appropriate style on a String value depending on the chosen Style value.
+	\item The StyleFactory abstract class is responsible for creating the appropriate StyleStrategy class for the given Style value.
+\end{itemize}
+
+The ReferenceStyleFactory abstract class is used by the MainModel class to create the appropriate ReferenceStyleStrategy object. This object is used when the MainModel class wants to display the references. The StyleFactory abstract class is used by the ReferenceStyleStrategy concrete classes to create the appropriate StyleStrategy object. This object is used when these classes want to apply a specific style to the value of a \textit{Field} object.
+
+The ReferenceStyle enumeration is used by the MainModel class when it wants to set a new \textit{Reference style} or display the references in the style indicated by the value of the ReferenceStyle. This enumeration is also used by the ReferenceStyleFactory abstract class to create the appropriate ReferenceStyleStrategy class according to the value of the ReferenceStyle. The reasons why we use an enumeration is because it restricts the possible values to indicate the different \textit{Reference styles} to the ones defined in the enumeration and it can be used in switch statements.
+
+%\begin{figure}
+%	\centering
+%	\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{"Part 3".png}}
+%	\caption{Class diagram of the \textit{Reference style} part.}
+%	\label{figure:3}
+%\end{figure}
+
+\subsection{The read and write part} \label{section:readwrite}
+Figure \ref{figure:4} shows the class diagram of the read and write part. The abstract classes and interfaces have the following responsibilities:
+
+\begin{itemize}
+	\item IReference, see Section \ref{section:references}.
+	\item The Reader interface is responsible for reading the references from a source of a certain \textit{Storage format}.
+	\item The Writer interface is responsible for saving the references in a specific \textit{Storage format}.
+	\item The AccessorFactory abstract class is responsible for creating the appropriate Reader and Writer classes depending on the \textit{Storage format} which can be extracted from the String parameter. 
+\end{itemize}
+
+The AccessorFactory abstract class is used by the MainModel class to create the appropriate Reader object and Writer object. These objects are used when the MainModel class wants to read or save the references. 
+
+%\begin{figure}
+%	\centering
+%	\noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{"Part 4".png}}
+%	\caption{Class diagram of the read and write part.}
+%	\label{figure:4}
+%\end{figure}
+
+\section{Design patterns}
+When we created the design, we looked the patterns that were known to us at that time. We list these patterns and the problem they solve in Table \ref{table:7}.
+
+\begin{table}
+	\centering
+	\caption{The patterns that were known to us at the time we created the application design.}
+	\label{table:7}
+	\begin{tabular}{|p{2cm}|p{2cm}|p{7.5cm}|} \hline
+		\textbf{Name} & \textbf{Category} & \textbf{Problem} \\ \hline
+		
+		Facade & Structural & You need to use only a subset of a complex system or interact with the system in a particular way. \\ \hline
+		
+		Adapter & Structural & A system has the right data and behavior but the wrong interface. \\ \hline
+		
+		Bridge & Structural & The derivations of an abstract class must use multiple implementations without causing an explosion in the number of classes.\\ \hline
+		
+		Decorator & Structural & The object you want to use need to add some additional functionality, occurring before or after its base functionality. \\ \hline
+		
+		Strategy & Behavioral & The selection of an algorithm that needs to be applied depends on the client making the request or the data being acted on. If you have a rule in place that does not change, this pattern is not needed. \\ \hline
+		
+		Abstract Factory & Creational & Families of related objects need to be instantiated. \\ \hline
+	\end{tabular}
+\end{table}
+
+We compared the problems we came across while we were designing, with the problems that each of the patterns in Table \ref{table:7} solve. This way we could choose the most effective pattern which would solve our problem.
+
+\subsection{Reading and writing references}
+The first problem we came across was that we needed to create objects that could read and write references from and to a specific \textit{Storage format}. The second problem was that the implementation of reading and writing from and to this format varies per format.
+
+We identified the Strategy pattern as the only candidate to solve the second problem. The problem this pattern solves perfectly resembles our problem. We use this pattern as follows: 
+
+\begin{itemize}
+	\item The MainModel class corresponds to the Context class of the generic structure of the Strategy pattern.
+	\item The Reader and Writer interfaces correspond to the Strategy abstract class of the generic structure of the Strategy pattern.
+	\item The BibTexReader, DatabaseReader, EndNoteReader, XMLReader and the BibTexWriter, DatabaseWriter, EndNoteWriter and XMLWriter classes correspond to the ConcreteStrategy classes of the generic structure of the Strategy pattern.
+\end{itemize}
+
+We identified the Abstract Factory as the only candidate to solve the first problem. This pattern can be used to create the related Reader and Writer objects depending on the \textit{Storage format}. We use this pattern as follows:
+
+\begin{itemize}
+	\item The MainModel class corresponds to the Client class of the generic structure of the Abstract Factory pattern.
+	\item The AccessorFactory abstract class corresponds to the AbstractFactory abstract class of the generic structure of the Abstract Factory pattern.
+	\item The BibTexAccessorFactory, DatabaseAccessorFactory, EndNoteAccessorFactory and XMLAccessorFactory classes correspond to the ConcreteFactory classes of the generic structure of the Abstract Factory pattern.
+	\item The Reader and Writer interfaces correspond to the AbstractProduct classes of the generic structure of the Abstract Factory pattern.
+	\item The BibTexReader, DatabaseReader, EndNoteReader, XMLReader and the BibTexWriter, DatabaseWriter, EndNoteWriter and XMLWriter classes correspond to the Product classes of the generic structure of the Abstract Factory pattern.
+\end{itemize}
+
+Like we said earlier, there are not any alternative patterns that we could identify to solve these problems.
+
+\subsection{Ordering \textit{Fields} and checking \textit{References} for completeness}
+The third problem we came across was that we needed a way to order the \textit{Fields} of a \textit{Reference} depending on the \textit{Reference type} when we want to display the reference. The value of this \textit{Reference type} can likely be changed in run-time in the future.
+
+We identified the Strategy pattern as the only candidate to solve this problem. The problem this pattern solves perfectly resembles our problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The Reference class corresponds to the Context class of the generic structure of the Strategy pattern.
+	\item The OrderFieldsStrategy interface corresponds to the Strategy abstract class of the generic structure of the Strategy pattern.
+	\item The BookOrderFieldsStrategy, JournalArticleOrderFieldsStrategy, ProceedingsOrderFieldsStrategy and ThesisOrderFieldsStrategy classes correspond to the ConcreteStrategy classes of the generic structure of the Strategy pattern.
+\end{itemize}
+
+The fourth problem we came across was that we needed a way to check if a \textit{Reference} is complete by checking if the reference has the required \textit{Fields} depending on the \textit{Reference type}. The value of this \textit{Reference type} can likely be changed in run-time in the future.
+
+We identified the Strategy pattern as the only candidate to solve this problem. The problem this pattern solves perfectly resembles our problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The Reference class corresponds to the Context class of the generic structure of the Strategy pattern.
+	\item The RequiredFieldsStrategy interface corresponds to the Strategy abstract class of the generic structure of the Strategy pattern.
+	\item The BookRequiredFieldsStrategy, JournalArticleRequiredFieldsStrategy, ProceedingsRequiredFieldsStrategy and ThesisRequiredFieldsStrategy classes correspond to the ConcreteStrategy classes of the generic structure of the Strategy pattern.
+\end{itemize}
+
+Now that we found these solutions, we needed a way to create the appropriate strategies for the \textit{Reference} depending on the \textit{Reference type}. We identified the Abstract Factory pattern as the only pattern that could solve this fifth problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The MainModel class corresponds to the Client class of the generic structure of the Abstract Factory pattern.
+	\item The ReferenceTypeStrategyFactory abstract class corresponds to the AbstractFactory abstract class of the generic structure of the Abstract Factory pattern.
+	\item The BookReferenceTypeStrategyFactory, JournalArticleReferenceTypeStrategyFactory, ProceedingsReferenceTypeStrategyFactory and ThesisReferenceTypeStrategyFactory classes correspond to the ConcreteFactory classes of the generic structure of the Abstract Factory pattern.
+	\item The RequiredFieldsStrategy and OrderFieldsStrategy interfaces correspond to the AbstractProduct classes of the generic structure of the Abstract Factory pattern.
+	\item The BookRequiredFieldsStrategy, JournalArticleRequiredFieldsStrategy, ProceedingsRequiredFieldsStrategy, ThesisRequiredFieldsStrategy and the BookOrderFieldsStrategy, JournalArticleOrderFieldsStrategy, ProceedingsOrderFieldsStrategy, ThesisOrderFieldsStrategy classes correspond to the Product classes of the generic structure of the Abstract Factory pattern.
+\end{itemize}
+
+Like we said earlier, there are not any alternative patterns that we could identify to solve these problems.
+
+\subsection{Display \textit{References} in a \textit{Reference style}}
+The sixth problem we came across was that we needed a way to display the values of the \textit{Fields} of the \textit{References} in a particular \textit{Reference style}. This style can be changed in run-time.
+
+We identified the Strategy pattern as the only candidate to solve this problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The MainModel class corresponds to the Context class of the generic structure of the Strategy pattern.
+	\item The ReferenceStyleStrategy interface corresponds to the Strategy abstract class of the generic structure of the Strategy pattern.
+	\item The APAReferenceStyleStrategy, TurabianReferenceStyleStrategy and ChicagoReferenceStyleStrategy classes correspond to the ConcreteStrategy classes of the generic structure of the Strategy pattern.
+\end{itemize}
+
+The ConcreteStrategy classes check the names of the \textit{Fields} in order to select the right style to apply to the values of the \textit{Fields}. Each style changes the appearance of the values in a different way. So as the seventh problem, we needed a way to change the appearance of the values of the \textit{Fields} according to the chosen style.
+
+We identified the Strategy pattern as the only candidate to solve this problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The APAReferenceStyleStrategy, TurabianReferenceStyleStrategy and ChicagoReferenceStyleStrategy classes correspond to the Context class of the generic structure of the Strategy pattern.
+	\item The StyleStrategy interface corresponds to the Strategy abstract class of the generic structure of the Strategy pattern.
+	\item The RegularStyleStrategy, BoldStyleStrategy and ItalicsStyleStrategy classes correspond to the ConcreteStrategy classes of the generic structure of the Strategy pattern.
+\end{itemize}
+
+Now we needed a way to create the appropriate strategy depending on the style that needed to be applied. We identified the Abstract Factory pattern as the only pattern that could solve this eight problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The APAReferenceStyleStrategy, TurabianReferenceStyleStrategy and ChicagoReferenceStyleStrategy classes correspond to the Client class of the generic structure of the Abstract Factory pattern.
+	\item The StyleFactory abstract class corresponds to the AbstractFactory abstract class of the generic structure of the Abstract Factory pattern.
+	\item The ItalicsStyleFactory, BoldStyleFactory and RegularStyleFactory classes correspond to the ConcreteFactory classes of the generic structure of the Abstract Factory pattern.
+	\item The StyleStrategy interface corresponds to the AbstractProduct class of the generic structure of the Abstract Factory pattern.
+	\item The RegularStyleStrategy, BoldStyleStrategy and ItalicsStyleStrategy classes correspond to the Product classes of the generic structure of the Abstract Factory pattern.
+\end{itemize}
+
+And finally, we needed a way to create the appropriate strategy to apply the correct style depending on the \textit{Reference style}. We identified the Abstract Factory pattern as the only pattern that could solve this problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The MainModel class corresponds to the Client class of the generic structure of the Abstract Factory pattern.
+	\item The ReferenceStyleFactory abstract class corresponds to the AbstractFactory abstract class of the generic structure of the Abstract Factory pattern.
+	\item The APAReferenceStyleFactory, TurabianReferenceStyleFactory and ChicagoReferenceStyleFactory classes correspond to the ConcreteFactory classes of the generic structure of the Abstract Factory pattern.
+	\item The ReferenceStyleStrategy interface corresponds to the AbstractProduct class of the generic structure of the Abstract Factory pattern.
+	\item The APAReferenceStyleStrategy, TurabianReferenceStyleStrategy and ChicagoReferenceStyleStrategy classes correspond to the Product classes of the generic structure of the Abstract Factory pattern.
+\end{itemize}
+
+Like we said earlier, there are not any alternative patterns that we could identify to solve these problems.
+
+\subsection{Client}
+One of the final problems we came across was how we would let the client use the functionality of the system. 
+
+We could not identify any patterns from Table \ref{table:7} to solve this problem. So we looked further and came across the Model-View-Controller pattern. The Controller could be used as an interface for the client to communicate with the system. The Controller forwards the request to the Model which will execute the required actions and return the results to the Controller. The Controller then notifies the View to visually display the results. We use this pattern as follows in our current design:
+
+\begin{itemize}
+	\item The MainModel class corresponds to the Model class of the generic structure of the MVC pattern.
+	\item The MainController class corresponds to the Controller class of the generic structure of the MVC pattern.
+	\item The MainView class corresponds to the View class of the generic structure of the MVC pattern.
+\end{itemize}
+
+An alternative solution could be to have one class to act as the interface for the client to communicate with the system and also process and show the results of the requests. This would achieve the same thing with fewer objects. However, the MVC pattern has more advantages over this alternative solution in terms of flexibility and complexity:
+
+\begin{itemize}
+	\item A user-interface may be necessary to support future feature requests. The MVC pattern deals specifically with structuring the applications with user-interfaces whereas the alternative solution does not.
+	\item MVC provides a clear separation between the presentation logic (View), business logic (Model) and control flow logic (Controller). The one class in the alternative solution would be responsible for all this logic which would make it much more complex.
+	\item The Model, View and Controller objects have distinct responsibilities and can be changed independent of each other. So when a user-interface is needed, only the existing View needs to be changed (unless more functionality is added with this new View meaning at least the Controller needs to be changed as well). The alternative solution does not assure that the responsibilities concerning the presentation, business and control flow logic can be changed independent of each other because they are all contained in the same object. This again increases the complexity and decreases the flexibility of this solution.
+\end{itemize}
+
+The final problem we came across is how to create the appropriate Model, View and Controller classes. We identified the Abstract Factory pattern as the only creational pattern that could solve this problem. We use this pattern as follows:
+
+\begin{itemize}
+	\item The MainModel class corresponds to the Client class of the generic structure of the Abstract Factory pattern (an external object that wishes to use this system also corresponds as the Client).
+	\item The MVCFactory abstract class corresponds to the AbstractFactory abstract class of the generic structure of the Abstract Factory pattern.
+	\item The MainMVCFactory class corresponds to the ConcreteFactory class of the generic structure of the Abstract Factory pattern.
+	\item The Model, Controller and View interfaces correspond to the AbstractProduct classes of the generic structure of the Abstract Factory pattern.
+	\item The MainModel, MainController and MainView classes correspond to the Product classes of the generic structure of the Abstract Factory pattern.
+\end{itemize}
+
+\section{Design decisions}
+In Section \ref{section:design} we already briefly discussed the design decisions we made. In this section we will argue why they are the best decisions with respect to flexibility and complexity.
+
+\subsection{Enumerations}
+There are several occurrences of enumeration objects in the design:
+
+\begin{itemize}
+	\item The \textit{Reference type} enumeration to indicate the specific \textit{Reference type} (Book, Journal article, etc.).
+	\item The \textit{Reference style} enumeration to indicate a specific \textit{Reference style} (APA, Turabian, etc.).
+	\item The Style enumeration to indicate a specific style (italics, bold, etc.).
+\end{itemize}
+
+The reasons why we use the enumeration objects over other objects (such as String) is because they restrict the possible values to the ones defined in the enumeration and they can be used in switch statements. The enumeration objects are used by the Abstract Factory classes to create an appropriate class depending on the value of the enumeration. This is where the switch statements are used with the enumeration objects to decide which classes will be created when. It provides an overview with minimal complexity. If more values need to be supported, they simply have to be added to the specific enumeration. So enumerations are also flexible.
+
+\subsubsection{Regarding the \textit{Storage format}}
+In an earlier design we also used an enumeration object to indicate the \textit{Storage format} (EndNote, XML, etc.). This object would be used by an Abstract Factory object to create the appropriate Reader and Writer objects depending on the \textit{Storage format}. Later on we removed the enumeration object because the format can already be extracted from the String path that points to the specific source. For instance, if a user wants to read the references from a BibTex file, the \textit{.bib} file extension already indicates the format. So a separate enumeration object does not need to be created, making the overall system less complex.
+
+\subsection{\textit{Reference type}}
+Another important design decision we made was about how we would implement the \textit{Reference type} for a \textit{Reference}. 
+
+The responsibilities we discussed in Table \ref{table:5} indicated that the \textit{Reference type} itself should be responsible for (a) checking if the corresponding \textit{Reference} has all the required \textit{Fields} with a value and (b) ordering the \textit{Fields}. This means a separate ReferenceType object should be defined that does these things. We ended up choosing a different design and let the Reference object be responsible for this. It makes more sense to let the Reference class work directly on its own Field objects as opposed to a different ReferenceType class that needs to get access to these Field objects. This would make the design needlessly more complex.
+
+Another alternative solution to solve this problem would be to implement derivations of the Reference object which override the "check" and "order" abstract methods. These derivations contain the correct implementation of these methods for the relevant \textit{Reference type} of the Reference. However, it is likely that the \textit{Reference type} of a Reference can be changed in the future. So the Reference object would then have to be re-instantiated as a new Reference object using the new corresponding \textit{Reference style} derivation. This is as inflexible as it can get.
+
+For these reasons we went with our current design where the Reference object is responsible for these two things and delegates the exact implementation to two different strategies. This maximizes the flexibility.
+
+\section{Future changes}
+Our design is flexible enough to easily support many different changes. In this section we discuss an example of one of such changes. We also discuss an example that is much more complicated to support.
+
+\subsection{Simple future change}
+An example of a simple future change would be when the system needs to support a new \textit{Reference style}: for instance MLA. We would have to take the following steps to implement this:
+
+\begin{itemize}
+	\item Add the MLA value to the ReferenceStyle enumeration.
+	\item Create a new concrete ReferenceStyleStrategy class for the MLA reference style: MLAReferenceStyleStrategy.
+	\item Create a new concrete ReferenceStyleFactory class for the MLA reference style: MLAReferenceStyleFactory. This class will instantiate the newly created concrete MLAReferenceStyleStrategy class.
+	\item Modify the getFactory method of the ReferenceStyleFactory abstract class so that the newly created MLAReferenceStyleFactory class can be created.
+\end{itemize}
+
+\subsection{Complex future change}
+An example of a complex future change would be when the system needs to read more than just references from various \textit{Storage formats}: for instance the document name where the references are used in. We assume the document name is also included in the same file or database as the references. We would have to take the following steps to implement this:
+
+\begin{itemize}
+	\item Create a Document class which holds the name of the document and the list of references.
+	\item Modify the MainModel class so it holds a reference to the Document class instead of the references. Also modify all the methods that worked directly with the references so they retrieve the references from the Document class first.
+	\item Modify the Reader and Writer interfaces so that they use the Document object instead of the list of references.
+	\item Modify all the concrete classes of the Reader and Writer interfaces in such a way so that they also read and write the document name.
+\end{itemize}
+
+As you can see, many more classes need to be modified compared to the other future change example. This future change requires a change in the design of the system because a whole new concept (Document) is introduced. For these reasons this future change is much more complex than the other one.
+
+\end{document}
